@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Bloxs | Payments for AI-first builders</title>
+    <meta name="title" content="Bloxs | Payments for AI-first builders" />
+    <meta name="description" content="Zero-code payment integration for AI-first builders. Tell your AI tool what you need, and Bloxs handles the checkout, tax, compliance, and analytics." />
+    <meta name="keywords" content="AI payments, payment infrastructure, zero-code payments, AI builder tools, MCP, Model Context Protocol, Stripe for AI, developer tools, SaaS payments" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bloxs.ai/" />
+    <meta property="og:title" content="Bloxs | Payments for AI-first builders" />
+    <meta property="og:description" content="Zero-code payment integration for AI-first builders. Tell your AI tool what you need, and Bloxs handles the checkout, tax, compliance, and analytics." />
+    <meta property="og:image" content="https://bloxs.ai/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://bloxs.ai/" />
+    <meta property="twitter:title" content="Bloxs | Payments for AI-first builders" />
+    <meta property="twitter:description" content="Zero-code payment integration for AI-first builders. Tell your AI tool what you need, and Bloxs handles the checkout, tax, compliance, and analytics." />
+    <meta property="twitter:image" content="https://bloxs.ai/og-image.jpg" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+            },
+            colors: {
+              brand: {
+                purple: '#8b5cf6',
+                purpleHover: '#7c3aed',
+                dark: '#050505',
+                card: '#0F0F0F',
+                border: '#1F1F1F'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050505;
+        color: white;
+      }
+      /* Custom scrollbar for terminal look */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+      .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
