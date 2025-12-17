@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, Sparkles, Eye } from 'lucide-react';
+import { Code2, Sparkles, Eye, Zap } from 'lucide-react';
 
 const Card = ({ 
   icon: Icon, 
@@ -32,24 +32,34 @@ const Card = ({
 
 export const WorkflowCards: React.FC = () => {
   return (
-    <section className="py-20">
+    <section className="py-20 bg-brand-dark overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Human-in-the-loop bridge text */}
+        <div className="flex flex-col items-center text-center mb-16 animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-purple/30 bg-brand-purple/10 text-brand-purple text-sm mb-4">
+              <Zap size={14} fill="currentColor" />
+              <span className="font-medium">Human-in-the-loop control ensures safety and customization</span>
+            </div>
+            <div className="w-px h-12 bg-gradient-to-b from-brand-purple/50 to-transparent"></div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card 
             icon={Code2}
-            badge="Simple"
+            badge="Setup"
             title="Connect through MCP"
             description="Bloxs connects to your AI tool via Model Context Protocol. One-time setup gives your AI native access to payment infrastructure."
           />
           <Card 
             icon={Sparkles}
-            badge="Natural"
+            badge="Process"
             title="Prompt in your fav AI tool"
             description="Describe what you need in plain English. 'Add subscription tiers' or 'Lock this feature for Pro users.' Bloxs understands and generates the solution."
           />
           <Card 
             icon={Eye}
-            badge="Safe"
+            badge="Approval"
             title="Control over output"
             description="Review generated code, UI, and payment flows before deployment. You stay in control: approve, customize, or iterate until it's right."
           />
