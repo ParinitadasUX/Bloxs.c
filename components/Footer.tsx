@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { Button } from './ui/Button';
+import { BloxsLogo } from './BloxsLogo';
 
 export const Footer: React.FC = () => {
   const scrollToWaitlist = () => {
@@ -8,31 +10,35 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="pt-24 pb-8 border-t border-white/5 bg-[#080808]">
+    <footer className="pt-24 pb-12 border-t border-white/5 bg-[#080808]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main CTA */}
         <div className="text-center mb-24">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
                 Start accepting payments with Bloxs
             </h2>
-            <p className="text-gray-500 mb-8">Join the waitlist to try the product</p>
-            <Button size="lg" onClick={scrollToWaitlist}>Join Now</Button>
+            <p className="text-gray-500 mb-8 max-w-lg mx-auto">
+              Join the growing community of AI builders who focus on building great products, not complex payment systems.
+            </p>
+            <Button size="lg" onClick={scrollToWaitlist}>Join the Waitlist</Button>
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
-                 <div className="w-5 h-5 rounded-full border border-gray-500 flex items-center justify-center">
-                    <div className="w-1.5 h-1.5 bg-gray-500 rounded-full"></div>
-                 </div>
-                 <span className="text-gray-500 text-sm">bloxs</span>
+        <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 gap-8">
+            <div className="flex items-center gap-3">
+                 <BloxsLogo size={24} className="opacity-80" />
+                 <span className="text-white font-bold text-lg tracking-tighter">bloxs</span>
             </div>
 
-            <div className="flex gap-8">
-                <a href="#" className="text-xs text-gray-500 hover:text-white transition-colors">Privacy</a>
-                <a href="#" className="text-xs text-gray-500 hover:text-white transition-colors">Terms</a>
-                <a href="#" className="text-xs text-gray-500 hover:text-white transition-colors">Docs</a>
+            <div className="flex gap-10">
+                <a href="#" className="text-sm text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" className="text-sm text-gray-500 hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" className="text-sm text-gray-500 hover:text-white transition-colors">Documentation</a>
+            </div>
+
+            <div className="text-sm text-gray-600">
+              © {new Date().getFullYear()} Bloxs Inc. All rights reserved.
             </div>
         </div>
 

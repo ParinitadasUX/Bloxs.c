@@ -1,7 +1,8 @@
+
 import React, { useState } from 'react';
 import { Button } from './ui/Button';
 import { Badge } from './ui/Badge';
-import { Sparkle, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -11,66 +12,63 @@ export const Hero: React.FC = () => {
     e.preventDefault();
     if (email) {
       setSubmitted(true);
-      // Simulate API call
-      console.log('Joined waitlist:', email);
     }
   };
 
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden" id="hero">
-      {/* Decorative background effects - Optimized: Replaced expensive blur with radial gradient */}
-      <div 
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] pointer-events-none transform-gpu"
-        style={{
-          background: 'radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 70%)'
-        }}
-      ></div>
-      
-      {/* Floating asterisk icon */}
-      <div className="hidden lg:block absolute top-40 right-10 animate-pulse text-yellow-300/80">
-         <Sparkle size={48} strokeWidth={1} />
+    <section className="relative pt-40 pb-32 overflow-hidden bg-black" id="hero">
+      {/* Mesh Gradient background */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] pointer-events-none opacity-40">
+        <div 
+          className="w-full h-full"
+          style={{
+            background: 'radial-gradient(circle at 50% 0%, #1a1a1a 0%, transparent 60%)'
+          }}
+        ></div>
       </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-        <Badge text="Payment infrastructure" className="mb-8" />
+      
+      <div className="relative max-w-7xl mx-auto px-6 text-center z-10 animate-fade-in">
+        <div className="flex justify-center mb-6">
+          <Badge className="bg-[#111] border-[#333] text-gray-400 py-1.5 px-4 font-normal hover:border-gray-500 transition-colors cursor-default">
+            Now available for Model Context Protocol →
+          </Badge>
+        </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-          <span className="text-white">Payments for</span>
-          <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-b from-gray-200 to-gray-500">
-            AI-first builders
+        <h1 className="text-6xl md:text-[100px] font-black tracking-[-0.05em] mb-8 leading-[0.9] text-white">
+          Payments for <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40">
+            AI-first builders.
           </span>
         </h1>
 
-        <p className="max-w-2xl mx-auto text-lg text-gray-400 mb-10 leading-relaxed">
-          Zero-code payment integration. Tell your AI tool what you need, and bloxs handles the rest—checkout, tax, compliance, analytics.
+        <p className="max-w-xl mx-auto text-xl text-gray-400 mb-12 leading-tight font-medium">
+          Zero-code payment infrastructure. Connect through MCP and tell your AI to handle checkout, tax, and subscriptions.
         </p>
 
-        <div className="max-w-md mx-auto mb-4 min-h-[100px]" id="join-waitlist">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20" id="join-waitlist">
           {submitted ? (
-            <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 animate-fade-in">
-              <div className="flex items-center gap-2 mb-1">
-                <CheckCircle2 size={20} />
-                <span className="font-semibold">You're on the list!</span>
-              </div>
-              <p className="text-sm opacity-80">We'll notify you when we launch.</p>
+            <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white animate-fade-in">
+              <CheckCircle2 size={18} className="text-brand-purple" />
+              <span className="text-sm font-medium">You're on the waitlist!</span>
             </div>
           ) : (
-            <>
-              <p className="text-sm text-gray-500 mb-3">Join the waitlist to try the product</p>
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
-                <input 
-                  type="email" 
-                  required
-                  placeholder="Enter your email" 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 bg-brand-card border border-brand-border rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple transition-all"
-                />
-                <Button type="submit">Join Waitlist</Button>
-              </form>
-            </>
+            <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
+              <input 
+                type="email" 
+                required
+                placeholder="Enter your email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 bg-black border border-[#333] rounded-md px-4 py-2.5 text-sm text-white focus:outline-none focus:border-white transition-all placeholder:text-gray-600"
+              />
+              <Button onClick={handleSubmit} variant="primary" size="md">
+                Join Waitlist
+              </Button>
+            </div>
           )}
+          <Button variant="outline" className="gap-2">
+            Documentation <ArrowRight size={14} />
+          </Button>
         </div>
       </div>
     </section>

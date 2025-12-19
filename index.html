@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
@@ -10,48 +11,39 @@
     <meta name="description" content="Zero-code payment integration for AI-first builders. Tell your AI tool what you need, and Bloxs handles the checkout, tax, compliance, and analytics." />
     <meta name="keywords" content="AI payments, payment infrastructure, zero-code payments, AI builder tools, MCP, Model Context Protocol, developer tools, SaaS payments" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://bloxs.ai/" />
-    <meta property="og:title" content="Bloxs | Payments for AI-first builders" />
-    <meta property="og:description" content="Zero-code payment integration for AI-first builders. Tell your AI tool what you need, and Bloxs handles the checkout, tax, compliance, and analytics." />
-    <meta property="og:image" content="https://bloxs.ai/og-image.jpg" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://bloxs.ai/" />
-    <meta property="twitter:title" content="Bloxs | Payments for AI-first builders" />
-    <meta property="twitter:description" content="Zero-code payment integration for AI-first builders. Tell your AI tool what you need, and Bloxs handles the checkout, tax, compliance, and analytics." />
-    <meta property="twitter:image" content="https://bloxs.ai/og-image.jpg" />
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
-              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
             },
             colors: {
               brand: {
                 purple: '#8b5cf6',
                 purpleHover: '#7c3aed',
-                dark: '#050505',
-                card: '#0F0F0F',
-                border: '#1F1F1F'
+                dark: '#000000',
+                card: '#0A0A0A',
+                border: '#171717'
               }
             },
             animation: {
-              'fade-in': 'fadeIn 0.5s ease-out',
+              'fade-in': 'fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+              'marquee': 'marquee 40s linear infinite',
             },
             keyframes: {
               fadeIn: {
-                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              marquee: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' }
               }
             }
           }
@@ -60,39 +52,31 @@
     </script>
     <style>
       body {
-        background-color: #050505;
-        color: white;
+        background-color: #000000;
+        color: #ffffff;
+        -webkit-font-smoothing: antialiased;
       }
-      /* Custom scrollbar for terminal look */
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
+      .vercel-border {
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
-      .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
+      .vercel-glow {
+        box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
       }
-      /* Custom thin scrollbar */
-      .scrollbar-thin::-webkit-scrollbar {
-        width: 6px;
-      }
-      .scrollbar-thin::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.05);
-      }
-      .scrollbar-thin::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.1); 
-        border-radius: 3px;
-      }
-      .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-        background: rgba(255, 255, 255, 0.2); 
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      
+      ::selection {
+        background: #ffffff;
+        color: #000000;
       }
     </style>
   <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
   }
 }
 </script>
